@@ -15,6 +15,20 @@ The project includes:
 - Experimentation with CNN architectures, including layers for convolution, pooling, dense connections, and dropout.
 - Training and evaluation of the model to achieve high accuracy on the dataset.
 
+### Technologies used:
+- TensorFlow: For building and training the neural network.
+- OpenCV: For image processing (loading and resizing images).
+- NumPy and Scikit-learn: For data handling and splitting.
+
+### Challenges faced:
+- Balancing model complexity to prevent overfitting or underfitting.
+- Achieving efficient preprocessing for thousands of images.
+
+### Future implementations:
+- Data Augmentation: Add transformations like rotation or brightness adjustment.
+- Hyperparameter Tuning: Experiment with learning rates, batch sizes, and optimizers.
+- Real-Time Deployment: Integrate the model with live video feeds for real-world use.
+
 ## Installation
 
 1. Clone the repository:
@@ -25,11 +39,32 @@ The project includes:
     ```
     cd traffic
     ```
-3. Install the required dependencies:
+3. Setup the virtual environment:
+    ```
+    python3.9 -m venv venv
+    source venv/bin/activate
+    ```
+4. Upgrade pip:
+    ```
+    pip install --upgrade pip
+    ```
+5. Install dependencies:
     ```
     pip install -r requirements.txt
     ```
 
 ## Usage
 
-To run the simulation, use the following command:
+1. Train the model:
+```
+python3 traffic.py gtsrb model.h5
+```
+2. Use the model:
+```
+from tensorflow.keras.models import load_model
+model = load_model("model.h5")
+```
+3. Deactive virtual environment:
+```
+deactivate
+```
